@@ -1,8 +1,8 @@
 ---
 title: "Goodreads"
 date: 2022-01-12T20:11:01+01:00
-draft: true
-href: #
+draft: false
+href: https://www.goodreads.com/jota_ele_ene
 profile: goodreads
 image: ""
 ---
