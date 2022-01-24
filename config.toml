@@ -1,4 +1,4 @@
-baseURL = 'http://2022.jln.bz'
+baseURL = 'https://2022.jln.bz'
 languageCode = 'en-us'
 title = 'José Luis Núñez'
 theme = 'just-me'
