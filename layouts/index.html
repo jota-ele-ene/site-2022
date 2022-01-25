@@ -22,16 +22,16 @@
     b.setAttribute("orientation", orientation);
     window.addEventListener("resize", checkOrientation);
 
+    var url = "{{ .Site.Params.unsplash_url }}?count=30&orientation="+getOrientation();
+
+    getRandomImages(url);
+
     var x = document.querySelectorAll(".container_bg.local");
     var bg = document.getElementsByClassName("bg");
     console.log("Removing " + bg[0].childNodes.length + " child container_bg")
     while (bg[0].firstChild) {
       bg[0].firstChild.remove();
     }
-
-    var url = "{{ .Site.Params.unsplash_url }}?count=30&orientation="+getOrientation();
-
-    getRandomImages(url);
 
     function getRandomImages(url) {
 
