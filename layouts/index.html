@@ -20,7 +20,7 @@
     var orientation = getOrientation();
     var b = document.getElementsByTagName("BODY")[0];
     b.setAttribute("orientation", orientation);
-    window.addEventListener("resize", checkOrientation);
+    window.addEventListener("resize", checkOrientationHere);
 
     var url = "{{ .Site.Params.unsplash_url }}?count=30&orientation="+getOrientation();
 
@@ -70,6 +70,22 @@
         var bg = document.getElementsByClassName('bg');
         bg[0].insertAdjacentHTML('beforeend', container_html);
       }
+
+      function checkOrientationHere() {
+          var currentOrientation = getOrientation();
+          var b = document.getElementsByTagName("BODY")[0];
+          if (currentOrientation.localeCompare(b.getAttribute("orientation"))){
+            b.setAttribute("orientation", currentOrientation);
+            var a = document.querySelector(".container_bg.bg_active");
+            if (a) {
+              a.classList.toggle("bg_active");
+              a.classList.toggle("fade_out");
+              a.classList.toggle("fading");
+            }
+            var url = "{{ .Site.Params.unsplash_url }}?count=30&orientation="+getOrientation();
+            getRandomImages(url);
+          }
+        }
 
   </script>
 
