@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+  <div class="title-div">
+    <div class="title">
+        <span>{{ .Title }}</span>
+    </div>
+    <div class="subtitle">
+        <span>{{ .Content }}</span>
+    </div>
+     {{ range where .Data.Pages "Section" "profiles" }}
+       {{ .Render "list"}}
+     {{ end }}
+  </div>
+
+  {{ range where .Data.Pages "Section" "backgrounds" }}
+    {{ .Render "list"}}
+  {{ end }}
+
+
+  <script src="{{ "js/background.js" | relURL }}"></script>
+
+
+  <script type="text/javascript">
+    var orientation = getOrientation();
+    var b = document.getElementsByTagName("BODY")[0];
+    b.setAttribute("orientation", orientation);
+    window.addEventListener("resize", checkOrientation);
+
+    var x = document.querySelectorAll(".container_bg.local");
+    var bg = document.getElementsByClassName("bg");
+    console.log("Removing " + bg[0].childNodes.length + " child container_bg")
+    while (bg[0].firstChild) {
+      bg[0].firstChild.remove();
+    }
+
+    var url = "{{ .Site.Params.unsplash_url }}?count=30&orientation="+getOrientation();
+
+    getRandomImages(url);
+
+    next_bg();
+
+  </script>
+
+
+{{ end }}
