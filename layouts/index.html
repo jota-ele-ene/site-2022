@@ -16,7 +16,6 @@
     {{ .Render "list"}}
   {{ end }}
 
-
   <script type="text/javascript">
     var orientation = getOrientation();
     var b = document.getElementsByTagName("BODY")[0];
@@ -33,8 +32,6 @@
     var url = "{{ .Site.Params.unsplash_url }}?count=30&orientation="+getOrientation();
 
     getRandomImages(url);
-
-    next_bg();
 
     function getRandomImages(url) {
 
