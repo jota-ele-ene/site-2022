@@ -10,5 +10,5 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
   author = "José Luis Núñez"
   author_link = "https://joseluisnuñez.es"
   ga_tracking_id = "UA-52910819-1"
-  #unsplash_url = "https://justcors.com/l_9nctxxpaj3/https://competent-edison-8543fa.netlify.app/.netlify/functions/api"
-  unsplash_url = "https://rnd-images.000webhostapp.com/"
+  unsplash_url = "https://competent-edison-8543fa.netlify.app/.netlify/functions/api"
+  #unsplash_url = "https://rnd-images.000webhostapp.com/"
